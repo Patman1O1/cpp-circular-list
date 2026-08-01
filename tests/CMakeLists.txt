@@ -5,30 +5,30 @@ include(GoogleTest)
 enable_testing()
 
 #-----------------------------------------------------------------------------------------------------------------------
-# Target: cpp_circular_list_test
-# Alias: collections::cpp_circular_list_test
+# Target: circular_list_test
+# Alias: collections::circular_list_test
 # Type: Executable
-# Dependencies: GTest::gtest_main, GTest::gmock_main, collections::cpp_circular_list_headers
+# Dependencies: GTest::gtest_main, GTest::gmock_main, collections::circular_list_headers
 #-----------------------------------------------------------------------------------------------------------------------
 # Target definition
-add_executable(cpp_circular_list_test)
+add_executable(circular_list_test)
 
 # Target alias
-add_executable(collections::cpp_circular_list_test ALIAS cpp_circular_list_test)
+add_executable(collections::circular_list_test ALIAS circular_list_test)
 
 # Target sources
-target_sources(cpp_circular_list_test
+target_sources(circular_list_test
     PRIVATE
-        ${CMAKE_CURRENT_SOURCE_DIR}/cpp_circular_list_test.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/circular_list_test.cpp
 )
 
 # Target dependencies
-target_link_libraries(cpp_circular_list_test
+target_link_libraries(circular_list_test
     PRIVATE
-        collections::cpp_circular_list_headers
+        collections::circular_list_headers
         GTest::gtest_main
         GTest::gmock_main
 )
 
 # Test discovery
-gtest_discover_tests(cpp_circular_list_test)
+gtest_discover_tests(circular_list_test)
