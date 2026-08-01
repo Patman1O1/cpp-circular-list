@@ -2,7 +2,7 @@
 # Information
 #-----------------------------------------------------------------------------------------------------------------------
 cmake_minimum_required(VERSION 4.3.0)
-project("cpp_circular_list"
+project("circular_list"
         VERSION 0.1.0
         DESCRIPTION ""
         LANGUAGES CXX
@@ -61,44 +61,44 @@ if(NOT CMAKE_SKIP_INSTALL_RULES)
 endif()
 
 #-----------------------------------------------------------------------------------------------------------------------
-# Target: cpp_circular_list_headers
-# Alias: collections::cpp_circular_list_headers
+# Target: circular_list_headers
+# Alias: collections::circular_list_headers
 # Type: Interface Library
 #-----------------------------------------------------------------------------------------------------------------------
 # Target definition
-add_library(cpp_circular_list_headers INTERFACE)
+add_library(circular_list_headers INTERFACE)
 
 # Target alias
-add_library(collections::cpp_circular_list_headers ALIAS cpp_circular_list_headers)
+add_library(collections::circular_list_headers ALIAS circular_list_headers)
 
 # Target headers
-target_include_directories(cpp_circular_list_headers
+target_include_directories(circular_list_headers
     INTERFACE
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
         $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>
 )
 
 #-----------------------------------------------------------------------------------------------------------------------
-# Target: cpp_circular_list
-# Alias: collections::cpp_circular_list
+# Target: circular_list
+# Alias: collections::circular_list
 # Type: Interface Library
-# Dependencies: collections::cpp_circular_list_headers
+# Dependencies: collections::circular_list_headers
 #-----------------------------------------------------------------------------------------------------------------------
 # Target definition
-add_library(cpp_circular_list INTERFACE)
+add_library(circular_list INTERFACE)
 
 # Target alias
-add_library(collections::cpp_circular_list ALIAS cpp_circular_list)
+add_library(collections::circular_list ALIAS circular_list)
 
 # Target dependencies
-target_link_libraries(cpp_circular_list
+target_link_libraries(circular_list
     INTERFACE
-        collections::cpp_circular_list_headers
+        collections::circular_list_headers
 )
 
 # Target properties
-set_target_properties(cpp_circular_list PROPERTIES
-        OUTPUT_NAME cpp_circular_list
+set_target_properties(circular_list PROPERTIES
+        OUTPUT_NAME circular_list
         VERSION ${PROJECT_VERSION}
         SOVERSION ${PROJECT_VERSION_MAJOR}
         CXX_VISIBILITY_PRESET hidden
@@ -107,11 +107,11 @@ set_target_properties(cpp_circular_list PROPERTIES
 
 if(NOT CMAKE_SKIP_INSTALL_RULES)
     # Install cpp_circular_list
-    install(TARGETS cpp_circular_list
-            RUNTIME COMPONENT cpp_circular_list
-            LIBRARY COMPONENT cpp_circular_list
-            NAMELINK_COMPONENT cpp_circular_list
-            ARCHIVE COMPONENT cpp_circular_list
+    install(TARGETS circular_list
+            RUNTIME COMPONENT circular_list
+            LIBRARY COMPONENT circular_list
+            NAMELINK_COMPONENT circular_list
+            ARCHIVE COMPONENT circular_list
             INCLUDES DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
 endif()
 
