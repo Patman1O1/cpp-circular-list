@@ -1,0 +1,4 @@
+#ifndef CPP_CIRCULAR_LIST_HPP
+#define CPP_CIRCULAR_LIST_HPP
+
+#endif // #ifndef CPP_CIRCULAR_LIST_HPP
