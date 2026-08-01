@@ -2,8 +2,8 @@ from conan import ConanFile
 from conan.tools.cmake import CMake, CMakeToolchain, CMakeDeps, cmake_layout
 import os
 
-class CppCircularList(ConanFile):
-    name = "cpp_circular_list"
+class CircularList(ConanFile):
+    name = "circular_list"
     version = "0.1.0"
     author = "Patman1O1"
     description = ""
@@ -44,6 +44,6 @@ class CppCircularList(ConanFile):
     def package(self) -> None: CMake(self).install()
 
     def package_info(self) -> None:
-        self.cpp_info.set_property("cmake_target_name", "collections::cpp_circular_list")
+        self.cpp_info.set_property("cmake_target_name", "collections::circular_list")
         self.cpp_info.bindirs = []
         self.cpp_info.libdirs = []
